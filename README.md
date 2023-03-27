@@ -274,6 +274,7 @@ int main(void)
 }
 ```
 圖解為以下
+
 <img src = "https://i.imgur.com/8mH16MB.png" width=200>
 
 指標變數本身也是一個變數，有自己的記憶體地址，只是該變數裡面儲存的值為記憶體地址
@@ -420,9 +421,11 @@ struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2){
 接著我們可以通過 `&(*ptr)->next` 得到指向 `head` 下一個節點的指標的指標。
 
 以下為初始情況
+
 <img src="https://i.imgur.com/0y1vXur.png" width=150>
 
 加入第一個節點 (直接修改 `head` 的內容，也就是讓 `head` 直接指向某一個節點)，`(*ptr) = list?`
+
 <img src = "https://i.imgur.com/XYsbVfV.png" width=150>
 
 通過 `(*ptr)` 存取到節點本身的指標，通過箭頭運算子存取成員
@@ -766,5 +769,7 @@ impl Solution {
 ```
 ## 參考資料
 [你所不知道的 C 語言: linked list 和非連續記憶體](https://hackmd.io/@sysprog/c-linked-list)
+
 [Rust-lang](https://rust-lang.tw/book-tw/title-page.html)
+
 [Rust. Fast&Slow pointers Solution](https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/solutions/2703610/rust-fast-slow-pointers/?languageTags=rust)
