@@ -66,10 +66,12 @@ void insert_tail(List *list, int value)
 在 Linked List 的尾端插入節點，使用 `prev` 和 `curr` 去走訪節點，`prev` 為 `NULL` 的情況，表示 Linked List 沒有任何節點或是為 `NULL`，否則就向 `prev->next` 插入節點，圖像化如下
 
 在 `prev` 不為 `NULL`，也就是 Linked List 不為空的情況下，存在節點的情況下
+
 ![](https://i.imgur.com/6IdhzOS.png)
 
 在 `prev` 為 `NULL`，也就是 Linked List 為空，沒有節點的情況下
-<img src = "https://i.imgur.com/SnNkF5Z.png" widht = 700, height = 400>
+
+![](https://i.imgur.com/SnNkF5Z.png)
 
 ### remove_node
 > Remove the Node in Linked List
@@ -155,7 +157,7 @@ int main(void)
 }
 ```
 上面這個例子十分容易理解，我們在 `foo()` 中修改的 `a`，實際上是在函式中產生的複本，不會影響到 `main` 中的 `a`。
-<img src = "https://i.imgur.com/z4BX4BQ.png" width=400>
+![](https://i.imgur.com/z4BX4BQ.png)
 
 如果要針對 `a` 進行修改，我們需要傳入指向到 `a` 的指標變數，修改 `a` 記憶體地址中儲存的資料，範例如下
 ```c
@@ -176,7 +178,7 @@ int main(void)
 }
 ```
 圖解如下
-<img src="https://i.imgur.com/2tkzpvA.png" width = 400>
+![](https://i.imgur.com/2tkzpvA.png)
 
 這裡可以注意到，對於 call by value，如果我們修改傳入函式中的值，實際上我們是修改到他的複本，但是我們可以修改他背後的資料，以 `*a` 而言，指標變數中儲存的是記憶體地址，而我們對其反參考可以得到記憶體地址儲存的資料，對於 call by value，我們無法修改變數中儲存的值，也就是我們無法修改指標中儲存的記憶體地址，但是我們可以通過反參考指標修改背後的資料。
 
@@ -274,8 +276,7 @@ int main(void)
 }
 ```
 圖解為以下
-
-<img src = "https://i.imgur.com/8mH16MB.png" width=200>
+![](https://i.imgur.com/8mH16MB.png)
 
 指標變數本身也是一個變數，有自己的記憶體地址，只是該變數裡面儲存的值為記憶體地址
 ```c
@@ -317,7 +318,7 @@ Context of a_ptr_ptr: 61ff14
 Dereference of a_ptr_ptr: 61ff18    
 Address of a_ptr_ptr: 61ff10
 ```
-<img src = "https://i.imgur.com/VjdQ25M.png" width=200>
+![](https://i.imgur.com/VjdQ25M.png)
 
 `Node a` 的記憶體地址為 `0x61ff18`。
 
@@ -348,12 +349,12 @@ Address of a_ptr_ptr: 61ff10
 ![](https://i.imgur.com/eYB6zOh.png)
 
 
-
+:::info
 由走訪節點的過程中我們可以觀察到一件事情，`indirect` 所維護的，是我們要更新的位置，我們接下來要更新的位置是儲存在 `next` 中的，型別為 `Node *`，而我們要存取要更新的位置，因此需要使用 `Node **` 進行操作。
 
 在上面的實作中，我們可以通過 `*indirect` 來得到 `Node *`，進而去存取下一個節點的資訊。
 
-
+:::
 
 如果 `*indirect` 就是我們要刪除的節點，也就是 `*indirect == target`，則圖解為以下
 ![](https://i.imgur.com/tuh69YT.png)
@@ -422,13 +423,14 @@ struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2){
 
 以下為初始情況
 
-<img src="https://i.imgur.com/0y1vXur.png" width=150>
+![](https://i.imgur.com/0y1vXur.png)
 
 加入第一個節點 (直接修改 `head` 的內容，也就是讓 `head` 直接指向某一個節點)，`(*ptr) = list?`
 
-<img src = "https://i.imgur.com/XYsbVfV.png" width=150>
+![](https://i.imgur.com/XYsbVfV.png)
 
 通過 `(*ptr)` 存取到節點本身的指標，通過箭頭運算子存取成員
+
 ![](https://i.imgur.com/2taDQHU.png)
 
 這裡的概念如同前面提及的 `remove_node` 一樣，我們是維護記憶體地址本身，而非節點本身。
