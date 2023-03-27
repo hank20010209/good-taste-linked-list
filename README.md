@@ -66,7 +66,7 @@ void insert_tail(List *list, int value)
 在 Linked List 的尾端插入節點，使用 `prev` 和 `curr` 去走訪節點，`prev` 為 `NULL` 的情況，表示 Linked List 沒有任何節點或是為 `NULL`，否則就向 `prev->next` 插入節點，圖像化如下
 
 在 `prev` 不為 `NULL`，也就是 Linked List 不為空的情況下，存在節點的情況下
-<img src = "https://i.imgur.com/6IdhzOS.png" width = 700 height = 400>
+![](https://i.imgur.com/6IdhzOS.png)
 
 在 `prev` 為 `NULL`，也就是 Linked List 為空，沒有節點的情況下
 <img src = "https://i.imgur.com/SnNkF5Z.png" widht = 700, height = 400>
@@ -348,12 +348,12 @@ Address of a_ptr_ptr: 61ff10
 ![](https://i.imgur.com/eYB6zOh.png)
 
 
-:::info
+
 由走訪節點的過程中我們可以觀察到一件事情，`indirect` 所維護的，是我們要更新的位置，我們接下來要更新的位置是儲存在 `next` 中的，型別為 `Node *`，而我們要存取要更新的位置，因此需要使用 `Node **` 進行操作。
 
 在上面的實作中，我們可以通過 `*indirect` 來得到 `Node *`，進而去存取下一個節點的資訊。
 
-:::
+
 
 如果 `*indirect` 就是我們要刪除的節點，也就是 `*indirect == target`，則圖解為以下
 ![](https://i.imgur.com/tuh69YT.png)
